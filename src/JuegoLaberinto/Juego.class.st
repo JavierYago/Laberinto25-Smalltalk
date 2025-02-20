@@ -29,6 +29,25 @@ Juego >> bichos: anObject [
 ]
 
 { #category : #laberintos }
+Juego >> crearLaberinto1H1BB:unFM [
+"unFM sebe ser una instancia de Creator"
+
+	| hab1 bichoBoss|
+	
+	hab1:=unFM fabricarHabitacion:1.
+
+	bichoBoss:=unFM fabricarBoss.
+	
+	self laberinto:unFM fabricarLaberinto.
+	self laberinto agregarHabitacion:hab1.
+	self agregarBicho:bichoBoss.
+	
+	bichoBoss posicion:hab1.
+
+	^self laberinto
+]
+
+{ #category : #laberintos }
 Juego >> crearLaberinto2Habitaciones [
 
 	| hab1 hab2 puerta|

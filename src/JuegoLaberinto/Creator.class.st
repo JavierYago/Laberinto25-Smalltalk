@@ -40,6 +40,16 @@ Creator >> fabricarBomba [
 	^Bomba new
 ]
 
+{ #category : #'fm-bichos' }
+Creator >> fabricarBoss [
+	|bicho|
+	bicho:=Bicho new.
+	bicho modo: Boss new.
+	bicho vidas:10.
+	bicho poder:20.
+	^bicho
+]
+
 { #category : #'factory method' }
 Creator >> fabricarHabitacion:unNum [
 |hab|

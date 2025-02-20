@@ -24,6 +24,11 @@ Bicho >> esAgresivo [
 ]
 
 { #category : #consulta }
+Bicho >> esBoss [
+	^self modo esBoss
+]
+
+{ #category : #consulta }
 Bicho >> esPerezoso [
 	^self modo esPerezoso
 ]
@@ -32,6 +37,13 @@ Bicho >> esPerezoso [
 Bicho >> iniAgresivo [
 	self modo: Agresivo new.
 	self poder:10.
+]
+
+{ #category : #initialization }
+Bicho >> iniBoss [
+	self modo: Perezoso new. "cablear"
+	self poder:20.
+
 ]
 
 { #category : #initialization }

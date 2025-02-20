@@ -29,6 +29,11 @@ Modo >> esAgresivo [
 ]
 
 { #category : #consulta }
+Modo >> esBoss [
+	^false
+]
+
+{ #category : #consulta }
 Modo >> esPerezoso [
 	^false
 ]
