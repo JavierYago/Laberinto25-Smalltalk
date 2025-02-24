@@ -3,7 +3,7 @@ Es una habitación
 "
 Class {
 	#name : #Habitacion,
-	#superclass : #ElementoMapa,
+	#superclass : #Contenedor,
 	#instVars : [
 		'num',
 		'norte',
