@@ -5,7 +5,8 @@ Class {
 	#name : #Contenedor,
 	#superclass : #ElementoMapa,
 	#instVars : [
-		'hijos'
+		'hijos',
+		'orientaciones'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -15,6 +16,11 @@ Contenedor >> agregarHijo:unEM [
 	unEM padre:self.
 	self hijos add:unEM.
 	
+]
+
+{ #category : #'gestion-orientaciones' }
+Contenedor >> agregarOrientacion:unaOr [
+	self orientaciones add:unaOr.
 ]
 
 { #category : #'gestion-hijos' }
@@ -37,4 +43,24 @@ Contenedor >> hijos: anObject [
 { #category : #initialization }
 Contenedor >> initialize [ 
 	hijos:=OrderedCollection new.
+	orientaciones:=OrderedCollection new.
+]
+
+{ #category : #accessing }
+Contenedor >> orientaciones [
+
+	^ orientaciones
+]
+
+{ #category : #accessing }
+Contenedor >> orientaciones: anObject [
+
+	orientaciones := anObject
+]
+
+{ #category : #accessing }
+Contenedor >> ponerEnOr:unaOr elemento:unEM [
+	"opcion 1: usar if then else"
+	"opcion 2: delegar en la orientacion"
+	unaOr ponerElemento:unEM en:self.
 ]
