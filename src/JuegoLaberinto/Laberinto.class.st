@@ -23,6 +23,11 @@ Laberinto >> entrar [
 	"que significa entrar en el laberinto???? entrar en la habitacion 1"
 ]
 
+{ #category : #consulta }
+Laberinto >> esLaberinto [ 
+	^true
+]
+
 { #category : #habitaciones }
 Laberinto >> obtenerHabitacion:unNum [
 

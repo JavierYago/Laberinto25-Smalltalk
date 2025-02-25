@@ -50,7 +50,7 @@ Creator >> fabricarBoss [
 	^bicho
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'factory method' }
 Creator >> fabricarEste [
 	^Este new
 ]
@@ -80,12 +80,12 @@ Creator >> fabricarLaberinto [
 	^Laberinto new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'factory method' }
 Creator >> fabricarNorte [
-	^Norte new
+	^Norte new.
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'factory method' }
 Creator >> fabricarOeste [
 	^Oeste new
 ]
@@ -100,7 +100,7 @@ Creator >> fabricarPuerta [
 	^Puerta new
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'factory method' }
 Creator >> fabricarSur [
 	^Sur new
 ]

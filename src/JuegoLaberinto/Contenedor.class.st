@@ -46,6 +46,11 @@ Contenedor >> initialize [
 	orientaciones:=OrderedCollection new.
 ]
 
+{ #category : #'gestion-orientaciones' }
+Contenedor >> obtenerElementoOr:unaOR [
+	^unaOR obtenerElementoOr:self
+]
+
 { #category : #accessing }
 Contenedor >> orientaciones [
 
@@ -60,7 +65,7 @@ Contenedor >> orientaciones: anObject [
 
 { #category : #accessing }
 Contenedor >> ponerEnOr:unaOr elemento:unEM [
-	"opcion 1: usar if then else"
+	"opcion 1: usar if para preguntar por unaOr"
 	"opcion 2: delegar en la orientacion"
 	unaOr ponerElemento:unEM en:self.
 ]

@@ -20,6 +20,11 @@ Habitacion >> entrar [
 	Transcript show:'Estás en una habitacion';cr.
 ]
 
+{ #category : #consulta }
+Habitacion >> esHabitacion [ 	
+	^true
+]
+
 { #category : #accessing }
 Habitacion >> este [
 
