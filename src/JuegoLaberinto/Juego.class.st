@@ -163,7 +163,7 @@ Juego >> crearLaberinto2HabitacionesFMD:unFM [
 Juego >> crearLaberinto4H4BFM:unFM [
 "unFM sebe ser una instancia de Creator"
 
-	| hab1 hab2 hab3 hab4 puerta1 puerta2 puerta3 puerta4 bicho1 bicho2 bicho3 bicho4 norte sur este oeste|
+	| hab1 hab2 hab3 hab4 puerta1 puerta2 puerta3 puerta4 norte sur este oeste|
 	norte:=unFM fabricarNorte.
 	sur:=unFM fabricarSur.
 	este:=unFM fabricarEste.
@@ -195,27 +195,16 @@ Juego >> crearLaberinto4H4BFM:unFM [
 	hab3 ponerEnOr:sur elemento:puerta4.
 	hab4 ponerEnOr:norte elemento:puerta4.
 	
-	bicho1:=unFM fabricarBichoAgresivo.
-	bicho2:=unFM fabricarBichoAgresivo.
-	bicho3:=unFM fabricarBichoPerezoso.
-	bicho4:=unFM fabricarBichoPerezoso.
-	
-	
 	
 	self laberinto:unFM fabricarLaberinto.
 	self laberinto agregarHabitacion:hab1.
 	self laberinto agregarHabitacion:hab2.
 	self laberinto agregarHabitacion:hab3.
 	self laberinto agregarHabitacion:hab4.
-	self agregarBicho:bicho1.
-	self agregarBicho:bicho2.
-	self agregarBicho:bicho3.
-	self agregarBicho:bicho4.
-	
-	bicho1 posicion:hab1.
-	bicho2 posicion:hab3.
-	bicho3 posicion:hab2.
-	bicho4 posicion:hab4.
+	self agregarBicho:(unFM fabricarBichoAgresivo: hab1).
+	self agregarBicho:(unFM fabricarBichoAgresivo: hab2).
+	self agregarBicho:(unFM fabricarBichoPerezoso: hab3).
+	self agregarBicho:(unFM fabricarBichoPerezoso: hab4).
 	
 	^self laberinto
 ]

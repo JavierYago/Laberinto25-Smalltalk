@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #'gestion-orientaciones' }
-Este >> obtenerElementoOr:unContenedor [
+Este >> obtenerElementoOrEn:unContenedor [
 	^unContenedor este.
 ]
 

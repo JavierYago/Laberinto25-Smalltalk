@@ -26,12 +26,34 @@ Creator >> fabricarBichoAgresivo [
 ]
 
 { #category : #'fm-bichos' }
+Creator >> fabricarBichoAgresivo:unaHab [
+	|bicho|
+	bicho:=Bicho new.
+	bicho modo: Agresivo new.
+	bicho vidas:5.
+	bicho poder:5.
+	bicho posicion:unaHab.
+	^bicho
+]
+
+{ #category : #'fm-bichos' }
 Creator >> fabricarBichoPerezoso [
 	|bicho|
 	bicho:=Bicho new.
 	bicho modo: Perezoso new.
 	bicho vidas:1.
 	bicho poder:1.
+	^bicho
+]
+
+{ #category : #'fm-bichos' }
+Creator >> fabricarBichoPerezoso:unaHab [
+	|bicho|
+	bicho:=Bicho new.
+	bicho modo: Perezoso new.
+	bicho vidas:1.
+	bicho poder:1.
+	bicho posicion:unaHab.
 	^bicho
 ]
 
@@ -47,6 +69,17 @@ Creator >> fabricarBoss [
 	bicho modo: Boss new.
 	bicho vidas:10.
 	bicho poder:20.
+	^bicho
+]
+
+{ #category : #'fm-bichos' }
+Creator >> fabricarBoss:unaHab [
+	|bicho|
+	bicho:=Bicho new.
+	bicho modo: Boss new.
+	bicho vidas:10.
+	bicho poder:20.
+	bicho posicion:unaHab.
 	^bicho
 ]
 

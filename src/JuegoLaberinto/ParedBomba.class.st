@@ -24,7 +24,7 @@ ParedBomba >> activa: anObject [
 
 { #category : #caminar }
 ParedBomba >> entrar [ 
-Transcript show:'Te has chocado con una ParedBomba';cr.
+Transcript show:'Te has chocado con una Pared Bomba';cr.
 ]
 
 { #category : #initialization }

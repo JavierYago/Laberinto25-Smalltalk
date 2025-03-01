@@ -48,7 +48,7 @@ Contenedor >> initialize [
 
 { #category : #'gestion-orientaciones' }
 Contenedor >> obtenerElementoOr:unaOR [
-	^unaOR obtenerElementoOr:self
+	^unaOR obtenerElementoOrEn:self
 ]
 
 { #category : #accessing }
