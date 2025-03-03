@@ -11,7 +11,7 @@ Class {
 { #category : #'fm-bichos' }
 Creator >> cambiarAModoAgresivo:unBicho [
 	unBicho modo: Agresivo new.
-	unBicho poder:10.
+	unBicho poder:5.
 	
 ]
 
