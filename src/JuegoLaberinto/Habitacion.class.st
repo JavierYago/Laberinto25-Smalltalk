@@ -15,9 +15,11 @@ Class {
 }
 
 { #category : #caminar }
-Habitacion >> entrar [
+Habitacion >> entrar:alguien [
 	"deberemos indicar quien entra"
-	Transcript show:'Estás en una habitacion';cr.
+	Transcript show:alguien printString; nextPutAll: ' esta en'; nextPutAll: self printString ;cr.
+	
+	alguien posicion:self.
 ]
 
 { #category : #consulta }
@@ -71,6 +73,12 @@ Habitacion >> oeste [
 Habitacion >> oeste: anObject [
 
 	oeste := anObject
+]
+
+{ #category : #printing }
+Habitacion >> printOn:aStream [
+
+	aStream nextPutAll: 'Hab' ; nextPutAll:self num asString.
 ]
 
 { #category : #accessing }
