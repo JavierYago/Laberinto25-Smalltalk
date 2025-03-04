@@ -9,6 +9,13 @@ Class {
 }
 
 { #category : #consulta }
+Perezoso >> dormir:unBicho [
+	Transcript show:unBicho printString ; nextPutAll: ' duerme';cr.
+   		(Delay forSeconds:3) wait.
+
+]
+
+{ #category : #consulta }
 Perezoso >> esPerezoso [
 	^true
 ]

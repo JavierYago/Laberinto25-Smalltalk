@@ -11,9 +11,14 @@ Class {
 Modo >> actua:unBicho [
 	"Template Method"
 	
-	"slef duerme."
-	self camina:unBicho.
-	"self ataca." 
+	"self dormir:unBicho."
+	self caminar:unBicho.
+	self atacar:unBicho.
+]
+
+{ #category : #'as yet unclassified' }
+Modo >> atacar:unBicho [
+	"no hacer nada"
 ]
 
 { #category : #'as yet unclassified' }
@@ -21,6 +26,21 @@ Modo >> camina:unBicho [
 	"self subclassResponsibility."
 	" "
 	"definir un caminar predeterminado"
+]
+
+{ #category : #'as yet unclassified' }
+Modo >> caminar:unBicho [
+	| or |
+	"obtener posicion"
+	"elegir una orientacion aleatoria en esa posicion"
+	or:=unBicho obtenerOrientacion.
+	"caminar hacia esa orientacion"
+	or caminar:unBicho.
+]
+
+{ #category : #'as yet unclassified' }
+Modo >> dormir:unBicho [
+	self subclassResponsibility.
 ]
 
 { #category : #consulta }

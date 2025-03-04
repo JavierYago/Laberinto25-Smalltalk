@@ -1,8 +1,18 @@
+"
+Norte es una orientacion
+"
 Class {
 	#name : #Norte,
 	#superclass : #Orientacion,
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #'as yet unclassified' }
+Norte >> caminar:unBicho [
+	| pos |
+	pos:=unBicho posicion.
+	pos norte entrar:unBicho.
+]
 
 { #category : #'gestion-orientaciones' }
 Norte >> obtenerElementoOrEn:unContenedor [

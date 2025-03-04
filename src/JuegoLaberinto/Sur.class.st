@@ -1,8 +1,18 @@
+"
+Sur es una orientacion
+"
 Class {
 	#name : #Sur,
 	#superclass : #Orientacion,
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #'as yet unclassified' }
+Sur >> caminar:unBicho [
+	| pos |
+	pos:=unBicho posicion.
+	pos sur entrar:unBicho.
+]
 
 { #category : #'gestion-orientaciones' }
 Sur >> obtenerElementoOrEn:unContenedor [

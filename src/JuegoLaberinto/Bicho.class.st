@@ -33,6 +33,11 @@ Bicho >> esPerezoso [
 	^self modo esPerezoso
 ]
 
+{ #category : #consulta }
+Bicho >> estaVivo [
+	^self vidas >0 
+]
+
 { #category : #initialization }
 Bicho >> iniAgresivo [
 	self modo: Agresivo new.
@@ -71,6 +76,12 @@ Bicho >> modo: anObject [
 ]
 
 { #category : #accessing }
+Bicho >> obtenerOrientacion [
+
+	^self posicion obtenerOrientacion
+]
+
+{ #category : #accessing }
 Bicho >> poder [
 
 	^ poder
@@ -92,6 +103,12 @@ Bicho >> posicion [
 Bicho >> posicion: anObject [
 
 	posicion := anObject
+]
+
+{ #category : #printing }
+Bicho >> printOn:aStream [
+
+	aStream nextPutAll: 'Bicho'.
 ]
 
 { #category : #accessing }
