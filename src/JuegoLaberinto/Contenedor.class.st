@@ -46,6 +46,16 @@ Contenedor >> initialize [
 	orientaciones:=OrderedCollection new.
 ]
 
+{ #category : #'as yet unclassified' }
+Contenedor >> irAlNorte:unPerson [
+	^self orientaciones at:Norte.
+]
+
+{ #category : #'as yet unclassified' }
+Contenedor >> irAlSur:alguien [
+	self sur entrar:alguien.
+]
+
 { #category : #'gestion-orientaciones' }
 Contenedor >> obtenerElementoOr:unaOR [
 	^unaOR obtenerElementoOrEn:self

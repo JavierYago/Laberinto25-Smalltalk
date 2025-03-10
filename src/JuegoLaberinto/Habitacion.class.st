@@ -39,6 +39,26 @@ Habitacion >> este: anObject [
 	este := anObject
 ]
 
+{ #category : #movimiento }
+Habitacion >> irAlEste:alguien [
+	self este entrar:alguien.
+]
+
+{ #category : #movimiento }
+Habitacion >> irAlNorte:alguien [
+	self norte entrar:alguien.
+]
+
+{ #category : #movimiento }
+Habitacion >> irAlOeste:alguien [
+	self oeste entrar:alguien.
+]
+
+{ #category : #movimiento }
+Habitacion >> irAlSur:alguien [
+	self sur entrar:alguien.
+]
+
 { #category : #accessing }
 Habitacion >> norte [
 
