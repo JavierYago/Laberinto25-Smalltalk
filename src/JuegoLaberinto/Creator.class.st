@@ -85,7 +85,7 @@ Creator >> fabricarBoss:unaHab [
 
 { #category : #'factory method' }
 Creator >> fabricarEste [
-	^Este new
+	^Este default
 ]
 
 { #category : #'factory method' }
@@ -115,12 +115,12 @@ Creator >> fabricarLaberinto [
 
 { #category : #'factory method' }
 Creator >> fabricarNorte [
-	^Norte new.
+	^Norte default.
 ]
 
 { #category : #'factory method' }
 Creator >> fabricarOeste [
-	^Oeste new
+	^Oeste default 
 ]
 
 { #category : #'factory method' }
@@ -135,5 +135,5 @@ Creator >> fabricarPuerta [
 
 { #category : #'factory method' }
 Creator >> fabricarSur [
-	^Sur new
+	^Sur default
 ]
