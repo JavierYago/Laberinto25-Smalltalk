@@ -7,7 +7,8 @@ Class {
 	#instVars : [
 		'laberinto',
 		'bichos',
-		'hilos'
+		'hilos',
+		'person'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -20,6 +21,12 @@ Juego >> abrirPuertas [
 { #category : #'gestion-bichos' }
 Juego >> agregarBicho:unBicho [
 	self bichos add:unBicho
+]
+
+{ #category : #'as yet unclassified' }
+Juego >> agregarPersonaje:unaCadena [
+	self person:(Personaje new nombre:unaCadena).
+	self laberinto entrar: self person.
 ]
 
 { #category : #accessing }
@@ -258,6 +265,7 @@ Juego >> laberinto: anObject [
 { #category : #'gestion-bichos' }
 Juego >> lanzarBicho:unBicho [
 	| proceso |
+	Transcript show:unBicho printString ; nextPutAll: ' se activa';cr.
 	 proceso:=[ [unBicho estaVivo] whileTrue:[unBicho actua]] fork.
  	self hilos at:unBicho put:proceso.
 ]
@@ -276,7 +284,26 @@ Juego >> obtenerHabitacion:unNum [
 	
 ]
 
+{ #category : #accessing }
+Juego >> person [
+
+	^ person
+]
+
+{ #category : #accessing }
+Juego >> person: anObject [
+
+	person := anObject
+]
+
 { #category : #'gestion-bichos' }
 Juego >> terminarBicho:unBicho [
+Transcript show:unBicho printString ; nextPutAll: ' muere';cr.
 	unBicho vidas:0.
+]
+
+{ #category : #'gestion-bichos' }
+Juego >> terminarBichos [
+	
+	self bichos do:[:each | self terminarBicho:each]
 ]
