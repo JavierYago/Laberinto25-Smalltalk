@@ -14,6 +14,23 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #ataques }
+Ente >> esAtacadoPor:alguien [
+
+	Transcript show: self printString ; nextPutAll: ' es atacado por ' ; nextPutAll: alguien printString; cr.
+	
+	self vidas:(self vidas-alguien poder).
+	
+	Transcript show: 'Vidas: ' ; nextPutAll:  self vidas asString; cr.
+	
+	self vidas <= 0 ifTrue:[  self heMuerto "self juego muerePersonaje".]
+]
+
+{ #category : #ataques }
+Ente >> heMuerto [ 
+self subclassResponsibility 
+]
+
 { #category : #initialization }
 Ente >> initialize [ 
 	vidas:=5.

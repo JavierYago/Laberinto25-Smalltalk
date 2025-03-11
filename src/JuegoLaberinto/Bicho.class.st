@@ -40,6 +40,11 @@ Bicho >> estaVivo [
 	^self vidas >0 
 ]
 
+{ #category : #ataques }
+Bicho >> heMuerto [
+self juego terminarBicho:self.
+]
+
 { #category : #initialization }
 Bicho >> iniAgresivo [
 	self modo: Agresivo new.
@@ -80,5 +85,5 @@ Bicho >> obtenerOrientacion [
 { #category : #printing }
 Bicho >> printOn:aStream [
 
-	aStream nextPutAll: 'Bicho'.
+	aStream nextPutAll: 'Bicho-'; nextPutAll:self modo asString.
 ]

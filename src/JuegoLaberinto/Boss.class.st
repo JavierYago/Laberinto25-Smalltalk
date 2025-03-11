@@ -11,3 +11,8 @@ Class {
 Boss >> esBoss [
 	^true
 ]
+
+{ #category : #printing }
+Boss >> printOn:aStream [
+	aStream nextPutAll:'Boss'.
+]
