@@ -6,7 +6,12 @@ Class {
 	#superclass : #ElementoMapa,
 	#instVars : [
 		'hijos',
-		'orientaciones'
+		'orientaciones',
+		'este',
+		'norte',
+		'num',
+		'oeste',
+		'sur'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -26,6 +31,26 @@ Contenedor >> agregarOrientacion:unaOr [
 { #category : #'gestion-hijos' }
 Contenedor >> eliminarHijo:unEM [
 	self hijos remove:unEM ifAbsent:["no existe ese objeto"]
+]
+
+{ #category : #caminar }
+Contenedor >> entrar:alguien [
+	"deberemos indicar quien entra"
+	Transcript show:alguien printString; nextPutAll: ' esta en '; nextPutAll: self printString ;cr.
+	
+	alguien posicion:self.
+]
+
+{ #category : #accessing }
+Contenedor >> este [
+
+	^ este
+]
+
+{ #category : #accessing }
+Contenedor >> este: anObject [
+
+	este := anObject
 ]
 
 { #category : #accessing }
@@ -56,6 +81,30 @@ Contenedor >> irAlSur:alguien [
 	self sur entrar:alguien.
 ]
 
+{ #category : #accessing }
+Contenedor >> norte [
+
+	^ norte
+]
+
+{ #category : #accessing }
+Contenedor >> norte: anObject [
+
+	norte := anObject
+]
+
+{ #category : #accessing }
+Contenedor >> num [
+
+	^ num
+]
+
+{ #category : #accessing }
+Contenedor >> num: anObject [
+
+	num := anObject
+]
+
 { #category : #'gestion-orientaciones' }
 Contenedor >> obtenerElementoOr:unaOR [
 	^unaOR obtenerElementoOrEn:self
@@ -67,6 +116,18 @@ Contenedor >> obtenerOrientacion [
 	ind:=(1 to:self orientaciones size) atRandom.
 	^self orientaciones at:ind.
 	
+]
+
+{ #category : #accessing }
+Contenedor >> oeste [
+
+	^ oeste
+]
+
+{ #category : #accessing }
+Contenedor >> oeste: anObject [
+
+	oeste := anObject
 ]
 
 { #category : #accessing }
@@ -94,4 +155,16 @@ Contenedor >> recorrer:unBloque [
 	self hijos do:[:each | each recorrer:unBloque].
 	"tengo que recorrer las orientaciones"
 	self orientaciones do:[:each | each recorrer:unBloque contenedor:self].
+]
+
+{ #category : #accessing }
+Contenedor >> sur [
+
+	^ sur
+]
+
+{ #category : #accessing }
+Contenedor >> sur: anObject [
+
+	sur := anObject
 ]
