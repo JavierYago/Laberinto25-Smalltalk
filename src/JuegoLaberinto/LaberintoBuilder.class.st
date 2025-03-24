@@ -150,6 +150,16 @@ LaberintoBuilder >> fabricarSur [
 	
 ]
 
+{ #category : #'metodos fabricacion' }
+LaberintoBuilder >> fabricarTunelEn:unCont [
+
+	|tunel|
+	
+	tunel:=Tunel new.
+	unCont agregarHijo:tunel.
+
+]
+
 { #category : #accessing }
 LaberintoBuilder >> juego [
 
