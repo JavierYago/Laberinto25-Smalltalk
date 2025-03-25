@@ -58,7 +58,7 @@ PruebasLaberinto >> testHabitaciones [
 	self assert:hab1 esHabitacion. 
 	self assert:hab2 esHabitacion.
 	
-	self assert: hab1 norte esPared. "hab1 obtenerElementoOr:norte. norte variable temporal"
+	"hab1 obtenerElementoOr:norte. norte variable temporal"
 	"..."
 	self assert: (hab1 obtenerElementoOr:norte) esPared.
 	self assert: (hab1 obtenerElementoOr:este) esPared.

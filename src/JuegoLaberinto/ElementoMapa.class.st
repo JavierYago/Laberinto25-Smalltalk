@@ -46,6 +46,11 @@ ElementoMapa >> esPuerta [
 	^false
 ]
 
+{ #category : #consulta }
+ElementoMapa >> esTunel [
+	^false
+]
+
 { #category : #accessing }
 ElementoMapa >> padre [
 

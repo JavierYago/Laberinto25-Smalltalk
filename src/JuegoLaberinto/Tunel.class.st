@@ -16,6 +16,11 @@ Tunel >> entrar:alguien [
 	
 ]
 
+{ #category : #consulta }
+Tunel >> esTunel [ 
+	^true
+]
+
 { #category : #accessing }
 Tunel >> laberinto [
 
