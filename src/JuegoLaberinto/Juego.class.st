@@ -8,7 +8,8 @@ Class {
 		'laberinto',
 		'bichos',
 		'hilos',
-		'person'
+		'person',
+		'prototipo'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
@@ -332,6 +333,18 @@ Juego >> person [
 Juego >> person: anObject [
 
 	person := anObject
+]
+
+{ #category : #accessing }
+Juego >> prototipo [
+
+	^ prototipo
+]
+
+{ #category : #accessing }
+Juego >> prototipo: anObject [
+
+	prototipo := anObject
 ]
 
 { #category : #'gestion-bichos' }
