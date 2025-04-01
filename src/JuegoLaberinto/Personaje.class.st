@@ -45,6 +45,11 @@ Personaje >> irAlSur [
 	self posicion irAlSur:self.
 ]
 
+{ #category : #'as yet unclassified' }
+Personaje >> juegoClonaLaberinto [
+	^self juego clonarLaberinto.
+]
+
 { #category : #accessing }
 Personaje >> nombre [
 
@@ -55,4 +60,10 @@ Personaje >> nombre [
 Personaje >> nombre: anObject [
 
 	nombre := anObject
+]
+
+{ #category : #printing }
+Personaje >> printOn:aStream [
+
+	aStream nextPutAll: 'Player-'; nextPutAll:self nombre asString.
 ]

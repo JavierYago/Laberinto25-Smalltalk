@@ -67,6 +67,12 @@ Juego >> cerrarPuertas [
 	self laberinto cerrarPuertas 
 ]
 
+{ #category : #prototype }
+Juego >> clonarLaberinto [
+
+	^self prototipo veryDeepCopy
+]
+
 { #category : #laberintos }
 Juego >> crearLaberinto1H1BB:unFM [
 "unFM sebe ser una instancia de Creator"

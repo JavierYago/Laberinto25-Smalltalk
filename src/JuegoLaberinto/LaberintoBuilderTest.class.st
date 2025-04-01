@@ -86,7 +86,7 @@ LaberintoBuilderTest >> comprobarPuertaDe:unNum orientacion:unaOr a:otroNum orie
 { #category : #running }
 LaberintoBuilderTest >> comprobarTunelEn:unContenedor [	
 	self assert:((unContenedor hijos detect:[:each | each esTunel ] ifNone:[nil]) esTunel).
-
+	"comprobar que funciona el Proxy virtual"
 
 
 ]
@@ -140,31 +140,44 @@ LaberintoBuilderTest >> setUp [
 	self juego agregarPersonaje:'Manolo'.
 ]
 
-{ #category : #running }
-LaberintoBuilderTest >> testBichoAtaca [
-	|hab1 bicho person|
-	hab1:=self juego obtenerHabitacion:1.
-	bicho:=self juego bichos at:1.
-	person:= self juego person.
+{ #category : #tests }
+LaberintoBuilderTest >> testBicho [
+	|hab bicho|
+	bicho:= self juego bichos at: 1.
+	self assert:  bicho notNil.
+	hab:=self juego obtenerHabitacion:1.
+	"self juego obtnerPosicionPersonaje"
+	self assert: bicho posicion equals:hab.
+	self assert: bicho vidas equals:5.
 	
-	self assert: bicho notNil.
-	self assert: person notNil.
-	
-	hab1 entrar:bicho.
-	hab1 entrar:person.
-	
-	bicho atacar.
-	
-	self assert: person vidas equals:0.
 ]
 
-{ #category : #running }
+{ #category : #tests }
+LaberintoBuilderTest >> testBichoAtaca [
+
+	| hab1 bicho person |
+	hab1 := self juego obtenerHabitacion: 1.
+	bicho := self juego bichos at: 1.
+	person := self juego person.
+
+	self assert: bicho notNil.
+	self assert: person notNil.
+
+	hab1 entrar: bicho.
+	hab1 entrar: person.
+	self assert: bicho posicion equals: person posicion.
+	bicho atacar.
+
+	self assert: person vidas equals: 0
+]
+
+{ #category : #tests }
 LaberintoBuilderTest >> testIniciales [
 	self assert: self juego notNil.
 	self assert: self juego laberinto notNil.
 ]
 
-{ #category : #running }
+{ #category : #tests }
 LaberintoBuilderTest >> testLaberinto [
 	
 	(self dict at:'laberinto') do:[:each | self comprobarLaberintoRecursivo:each en:'root' ].
@@ -173,7 +186,7 @@ LaberintoBuilderTest >> testLaberinto [
 		self comprobarPuertaDe:(cada at:1) orientacion:(cada at:2) a:(cada at:3) orientacion:(cada at:4)].	
 ]
 
-{ #category : #running }
+{ #category : #tests }
 LaberintoBuilderTest >> testPersonaje [
 	|hab|
 	self assert: self juego person notNil.
@@ -184,7 +197,7 @@ LaberintoBuilderTest >> testPersonaje [
 	
 ]
 
-{ #category : #running }
+{ #category : #tests }
 LaberintoBuilderTest >> testPersonajeAtaca [
 	|hab1 bicho person|
 	hab1:=self juego obtenerHabitacion:1.
@@ -197,6 +210,7 @@ LaberintoBuilderTest >> testPersonajeAtaca [
 	hab1 entrar:bicho.
 	hab1 entrar:person.
 	
+	self assert: bicho posicion equals: person posicion.
 	person atacar.
 	
 	self assert: bicho vidas equals:4.
