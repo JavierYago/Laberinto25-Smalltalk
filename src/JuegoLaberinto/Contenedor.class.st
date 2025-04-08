@@ -36,7 +36,9 @@ Contenedor >> entrar:alguien [
 	
 	alguien posicion:self.
 	
-	"buscar elemento (tunel)"
+	alguien buscarTunel.
+	"para los bichos: buscar elemento (tunel)"
+	
 ]
 
 { #category : #accessing }
@@ -65,6 +67,7 @@ Contenedor >> hijos: anObject [
 
 { #category : #initialization }
 Contenedor >> initialize [ 
+	super initialize .
 	hijos:=OrderedCollection new.
 	
 ]

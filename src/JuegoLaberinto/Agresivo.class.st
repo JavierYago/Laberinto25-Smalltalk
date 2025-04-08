@@ -7,6 +7,18 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Agresivo >> buscarTunelBicho: unBicho [
+
+	| unCont tunel |
+	"obtener la posicion (contenedor)""recorrer los hijos del contenedor buscando un tunel"
+	unCont := unBicho posicion.
+	tunel := unCont hijos
+		         detect: [ :each | each esTunel ]
+		         ifNone: [ nil ].
+	tunel ifNotNil: [ tunel entrar:unBicho ]
+]
+
 { #category : #consulta }
 Agresivo >> dormir:unBicho [
 	Transcript show:unBicho printString ; nextPutAll: ' duerme';cr.

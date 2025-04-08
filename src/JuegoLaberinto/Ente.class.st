@@ -9,10 +9,33 @@ Class {
 		'poder',
 		'posicion',
 		'vidas',
-		'juego'
+		'juego',
+		'estadoEnte'
 	],
 	#category : #'JuegoLaberinto-Laberinto'
 }
+
+{ #category : #ataques }
+Ente >> atacar [
+	self estadoEnte atacar:self.
+]
+
+{ #category : #ataques }
+Ente >> avisar [
+	self subclassResponsibility 
+]
+
+{ #category : #'as yet unclassified' }
+Ente >> buscarTunel [
+	"self subclassResponsibility"
+	" nada "
+	" comportamiento predeterminado"
+]
+
+{ #category : #'as yet unclassified' }
+Ente >> crearNuevoLaberinto:unTunel [
+	
+]
 
 { #category : #ataques }
 Ente >> esAtacadoPor:alguien [
@@ -26,15 +49,34 @@ Ente >> esAtacadoPor:alguien [
 	self vidas <= 0 ifTrue:[  self heMuerto "self juego muerePersonaje".]
 ]
 
+{ #category : #consulta }
+Ente >> estaVivo [
+	^self vidas >0 
+]
+
+{ #category : #accessing }
+Ente >> estadoEnte [
+
+	^ estadoEnte
+]
+
+{ #category : #accessing }
+Ente >> estadoEnte: anObject [
+
+	estadoEnte := anObject
+]
+
 { #category : #ataques }
 Ente >> heMuerto [ 
-self subclassResponsibility 
+	self estadoEnte: Muerto new.
+	self avisar.
 ]
 
 { #category : #initialization }
 Ente >> initialize [ 
 	vidas:=5.
 	poder:=1.
+	estadoEnte:=Vivo new.
 ]
 
 { #category : #accessing }
@@ -47,6 +89,11 @@ Ente >> juego [
 Ente >> juego: anObject [
 
 	juego := anObject
+]
+
+{ #category : #'as yet unclassified' }
+Ente >> juegoClonaLaberinto [
+	^self juego clonarLaberinto.
 ]
 
 { #category : #accessing }
@@ -71,6 +118,11 @@ Ente >> posicion [
 Ente >> posicion: anObject [
 
 	posicion := anObject
+]
+
+{ #category : #ataques }
+Ente >> puedeAtacar [
+	self subclassResponsibility.
 ]
 
 { #category : #accessing }

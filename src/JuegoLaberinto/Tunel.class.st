@@ -10,10 +10,28 @@ Class {
 	#category : #'JuegoLaberinto-Laberinto'
 }
 
+{ #category : #'as yet unclassified' }
+Tunel >> buscarTunel [ 
+	"nada"
+]
+
+{ #category : #'as yet unclassified' }
+Tunel >> crearNuevoLaberinto:alguien [
+	Transcript show: alguien printString; nextPutAll: ' crea en un nuevo laberinto'; cr.
+	self laberinto:alguien juegoClonaLaberinto.
+]
+
 { #category : #caminar }
-Tunel >> entrar:alguien [
-	self laberinto:alguien juegoClonaLaberinto."juego prototipo veryDeepCopy"
-	self laberinto entrar:alguien.
+Tunel >> entrar: alguien [
+
+	self laberinto
+		ifNil: [ "delegar en ente" alguien crearNuevoLaberinto: self ]
+		ifNotNil: [
+			Transcript
+				show: alguien printString;
+				nextPutAll: ' entra en un nuevo laberinto';
+				cr.
+			self laberinto entrar: alguien ]
 ]
 
 { #category : #consulta }

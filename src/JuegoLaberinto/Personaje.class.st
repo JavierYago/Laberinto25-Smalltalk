@@ -11,18 +11,13 @@ Class {
 }
 
 { #category : #ataques }
-Personaje >> atacar [
-	self juego buscarBicho.
-]
-
-{ #category : #consulta }
-Personaje >> estaVivo [
-	^self vidas >0 
-]
-
-{ #category : #ataques }
-Personaje >> heMuerto [ 	
+Personaje >> avisar [
 self juego muerePersonaje.
+]
+
+{ #category : #'as yet unclassified' }
+Personaje >> crearNuevoLaberinto:unTunel [
+	unTunel crearNuevoLaberinto:self.
 ]
 
 { #category : #'as yet unclassified' }
@@ -45,11 +40,6 @@ Personaje >> irAlSur [
 	self posicion irAlSur:self.
 ]
 
-{ #category : #'as yet unclassified' }
-Personaje >> juegoClonaLaberinto [
-	^self juego clonarLaberinto.
-]
-
 { #category : #accessing }
 Personaje >> nombre [
 
@@ -62,8 +52,22 @@ Personaje >> nombre: anObject [
 	nombre := anObject
 ]
 
+{ #category : #'as yet unclassified' }
+Personaje >> obtenerComandos [
+	|lista|
+	
+	lista:=OrderedCollection new.
+	self posicion recorrer:[:each | lista addAll:each obtenerComandos].
+	^lista.
+]
+
 { #category : #printing }
 Personaje >> printOn:aStream [
 
 	aStream nextPutAll: 'Player-'; nextPutAll:self nombre asString.
+]
+
+{ #category : #ataques }
+Personaje >> puedeAtacar [
+	self juego buscarBicho.
 ]
