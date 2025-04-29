@@ -12,6 +12,13 @@ Laberinto >> abrirPuertas [
 	self recorrer:[:each | each esPuerta ifTrue:[each abrir]].
 ]
 
+{ #category : #recorrido }
+Laberinto >> aceptar:unVisitor [
+	
+	self hijos do:[:each | each aceptar:unVisitor].
+	"no tiene forma, luego no recorre las orientaciones"
+]
+
 { #category : #habitaciones }
 Laberinto >> agregarHabitacion:unaHabitacion [
 

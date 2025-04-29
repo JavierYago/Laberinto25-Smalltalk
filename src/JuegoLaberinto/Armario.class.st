@@ -11,3 +11,8 @@ Class {
 Armario >> esArmario [
 	^true
 ]
+
+{ #category : #visitor }
+Armario >> visitarContenedor:unVisitor [
+	unVisitor visitarArmario:self
+]

@@ -17,3 +17,8 @@ Habitacion >> printOn:aStream [
 
 	aStream nextPutAll: 'Hab' ; nextPutAll:self num asString.
 ]
+
+{ #category : #visitor }
+Habitacion >> visitarContenedor: unVisitor [
+	unVisitor visitarHabitacion:self
+]
