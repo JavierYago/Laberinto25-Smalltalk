@@ -32,6 +32,12 @@ Contenedor >> agregarOrientacion:unaOr [
 	self forma agregarOrientacion:unaOr.
 ]
 
+{ #category : #accessing }
+Contenedor >> calcularPosicion [
+	self forma calcularPosicion
+
+]
+
 { #category : #'gestion-hijos' }
 Contenedor >> eliminarHijo:unEM [
 	self hijos remove:unEM ifAbsent:["no existe ese objeto"]
@@ -47,6 +53,16 @@ Contenedor >> entrar:alguien [
 	alguien buscarTunel.
 	"para los bichos: buscar elemento (tunel)"
 	
+]
+
+{ #category : #accessing }
+Contenedor >> extent [
+	^self forma extent
+]
+
+{ #category : #accessing }
+Contenedor >> extent:unPunto [
+	self forma extent:unPunto
 ]
 
 { #category : #accessing }
@@ -139,6 +155,16 @@ Contenedor >> obtenerOrientaciones [
 Contenedor >> ponerEnOr:unaOr elemento:unEM [
 	"unaOr ponerElemento:unEM en:self."
 	self forma ponerEnOr:unaOr  elemento:unEM 
+]
+
+{ #category : #accessing }
+Contenedor >> punto [
+	^self forma punto
+]
+
+{ #category : #accessing }
+Contenedor >> punto:unPunto [
+	self forma punto:unPunto
 ]
 
 { #category : #recorrido }
